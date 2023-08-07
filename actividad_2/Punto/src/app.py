@@ -1,5 +1,10 @@
+import math
+
 from modelo.punto import punto
+from modelo.mover import mover
 
-localizacion=punto(x=5,y=2)
+punto1 = punto(5, 2) 
 
-print("el punto en el plano cartesiano es",localizacion.x,",",localizacion.y)
+
+punto1=mover(7,3)
+
