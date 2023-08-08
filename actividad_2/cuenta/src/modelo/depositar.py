@@ -1,4 +1,4 @@
-from modelo.cuenta import CuentaBancaria
+
 class depositar:
 
     def __init__(self, monto):
