@@ -1,5 +1,4 @@
 import math
 class perimetro:
-    def perimetro(self):
-        perimetro=2*math.pi* self.radio
-        return perimetro
+     def calcular_perimetro(self):
+        return 2 * math.pi * self.radio

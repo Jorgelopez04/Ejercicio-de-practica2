@@ -3,13 +3,24 @@ from modelo.circulo import circulo
 from modelo.area import area
 from modelo.perimetro import perimetro
 
-resultado=circulo(radio=10,centro=4)
-print(f"el radio del circulo es {resultado.radio} y su centro es {resultado.centro}")
 
-area_circulo=area(radio=10)
-print("el area es",area)
+mi_circulo = circulo(4, 10)
 
 
-perimetro_circulo=perimetro()
-print("el perimetro del circulo es de ", perimetro_circulo)
+area = mi_circulo.area()
+perimetro = mi_circulo.calcular_perimetro()
+
+print("Área:", area)
+print("Perímetro:", perimetro)
+
+
+x_punto = 6
+
+pertenece = mi_circulo.punto_pertenece(x_punto)
+
+if pertenece:
+    print(f"El punto ({x_punto}) pertenece al círculo.")
+else:
+    print(f"El punto ({x_punto}) no pertenece al círculo.")
+
 

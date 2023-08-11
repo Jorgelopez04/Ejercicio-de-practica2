@@ -1,5 +1,5 @@
 import math
 class area:
-     def area(self,radio):
-        area= math.pi*radio**2
-        return area
+        def calcular_area(self):
+            return math.pi * self.radio ** 2
+     
