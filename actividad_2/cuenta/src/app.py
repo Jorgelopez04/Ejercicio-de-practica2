@@ -1,10 +1,20 @@
 from modelo.cuenta import CuentaBancaria
 from modelo.depositar import depositar
-cuenta1= CuentaBancaria(numero_cuenta=1040,propietarios="Juan",balance=500)
+from modelo.retirar import retirar
+from modelo.detalles import detalles
+from modelo.cuota import cuota
 
 
 
-print(f"su cuenta es {cuenta1.numero_cuenta} el propietario es {cuenta1.propietarios} y su balance es {cuenta1.balance}")
+mi_cuenta = CuentaBancaria("1040", ["Juan Alvarez"], 1000)
+
+
+mi_cuenta.depositar(500)
+mi_cuenta.retirar(400)
+mi_cuenta.cuota()
+
+
+mi_cuenta.detalles()
 
 
 

@@ -1,7 +1,6 @@
 
 class depositar:
 
-    def __init__(self, monto):
-        self.monto=monto
-        monto.cuentabancaria.append(self)
-        print("monto agregado")
+   def __Init__(self, cantidad):
+        self.balance += cantidad
+        print(f"Se depositaron ${cantidad} en la cuenta {self.numero_cuenta}. Nuevo balance: ${self.balance}") 

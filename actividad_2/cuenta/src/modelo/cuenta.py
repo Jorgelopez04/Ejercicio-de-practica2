@@ -2,45 +2,41 @@
 
 
 
-
 class CuentaBancaria:
-
-    def __init__(self,numero_cuenta,propietarios,balance):
-        self.numero_cuenta=numero_cuenta
-        self.propietarios= propietarios
-        self.balance=balance
-
-
-    def depositar(self, monto,balance):
-        self.monto=monto
-        self.balance=monto+balance
-       
-
-    def retirar(self, monto,balance):
-        self.monto=monto
-        self.balance=monto-balance
-
-
-    def cuota(self,balance):
-        self.cuota_manejo =balance*0.02
-        self.balance=self.balance-self.cuota_manejo
-
- 
-
-
+    def __init__(self, numero_cuenta, propietarios, balance):
+        self.numero_cuenta = numero_cuenta
+        self.propietarios = propietarios
+        self.balance = balance
     
-      
+    def depositar(self, cantidad):
+        self.balance += cantidad
+        print(f"Se depositaron ${cantidad} en la cuenta {self.numero_cuenta}. Nuevo balance: ${self.balance}")
+    
+    def retirar(self, cantidad):
+        if cantidad <= self.balance:
+            self.balance -= cantidad
+            print(f"Se retiraron ${cantidad} de la cuenta {self.numero_cuenta}. Nuevo balance: ${self.balance}")
+        else:
+            print("Fondos insuficientes para retirar.")
+    
+    def cuota(self):
+        cuota = self.balance * 0.02
+        self.balance -= cuota
+        print(f"Se aplicó una cuota de manejo del 2% (${cuota}) en la cuenta {self.numero_cuenta}. Nuevo balance: ${self.balance}")
+    
+    def detalles(self):
+        print(f"Detalles de la cuenta:")
+        print(f"Número de cuenta: {self.numero_cuenta}")
+        print(f"Propietarios: {', '.join(self.propietarios)}")
+        print(f"Balance: ${self.balance}")
 
-cuenta1= CuentaBancaria(numero_cuenta=1040,propietarios="Juan",balance=500)
-print(f"su cuenta es {cuenta1.numero_cuenta} el propietario es {cuenta1.propietarios} y su balance es {cuenta1.balance}")
+
+mi_cuenta = CuentaBancaria("1040",  ["Juan Alvarez"], 1000)
 
 
+mi_cuenta.depositar(500)
+mi_cuenta.retirar(400)
+mi_cuenta.cuota()
 
-cuenta1.depositar(monto= 1000,balance=500)
-print("Nuevo balance:", cuenta1.balance)
 
-cuenta1.retirar(monto=1000,balance=500)
-print("el retiro que has realizado es de",cuenta1.balance)
-
-cuenta1.cuota(balance=500)
-print("su cuota de manejo es de ",cuenta1.balance)
+mi_cuenta.detalles()
