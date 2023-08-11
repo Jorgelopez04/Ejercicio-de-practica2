@@ -2,8 +2,7 @@ import math
 class distancia:
 
 
-    def calcular_distancia(self, otro_punto):
-        distancia_x = self.x - otro_punto.x
-        distancia_y = self.y - otro_punto.y
-        distancia = math.sqrt(distancia_x**2 + distancia_y**2)
+    def __init__(self, otro_punto):
+        distancia = math.sqrt((self.x - otro_punto.x) ** 2 + (self.y - otro_punto.y) ** 2)
         return distancia
+        

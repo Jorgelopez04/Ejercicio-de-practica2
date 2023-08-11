@@ -31,12 +31,3 @@ class CuentaBancaria:
         print(f"Balance: ${self.balance}")
 
 
-mi_cuenta = CuentaBancaria("1040",  ["Juan Alvarez"], 1000)
-
-
-mi_cuenta.depositar(500)
-mi_cuenta.retirar(400)
-mi_cuenta.cuota()
-
-
-mi_cuenta.detalles()
